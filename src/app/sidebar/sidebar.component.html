@@ -10,7 +10,7 @@
   <nav id="sidebar" class="sidebar-wrapper">
     <div class="sidebar-content">
       <div class="sidebar-brand">
-        <a routerLink="/dashboard" routerLinkActive="active">Géstion stock</a>
+        <a [routerLink]="[{outlets: {contentOutlet : 'dashboard'}}]" routerLinkActive="active">Géstion stock</a>
       </div>
       <div class="sidebar-header">
         <div class="user-pic">
@@ -49,14 +49,14 @@
           </li>
 
           <li>
-            <a routerLink="/dashboard" routerLinkActive="active">
+            <a [routerLink]="[{outlets: {contentOutlet : 'dashboard'}}]" routerLinkActive="active">
               <i class="fa fa-tachometer-alt"></i>
               <span>Dashboard</span>
             </a>
           </li>
 
           <li>
-            <a routerLink="/produit" routerLinkActive="active">
+            <a [routerLink]="[{outlets: {contentOutlet : 'produit'}}]" routerLinkActive="active">
               <i class="fa fa-shopping-cart"></i>
               <span>Produit</span>
             </a>

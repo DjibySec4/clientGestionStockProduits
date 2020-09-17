@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -15,7 +16,7 @@ export class NavbarComponent implements OnInit {
   @Output()
   showSideBarChange_navbar : EventEmitter<boolean> = new EventEmitter<boolean>();
 
-  constructor() { }
+  constructor( private router : Router) { }
 
   ngOnInit(): void {
   }
@@ -26,6 +27,11 @@ export class NavbarComponent implements OnInit {
       this.showSideBar_navbar = !this.showSideBar_navbar;
       //On prapage le changement aux 2 composants (pere => app et fils => navbar) d'ou le @Output
       this.showSideBarChange_navbar.emit(this.showSideBar_navbar);
+  }
+
+    logout()
+  {
+     return  this.router.navigateByUrl("/login");;
   }
 
 }

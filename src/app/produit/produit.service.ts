@@ -30,8 +30,8 @@ export class ProduitService
     }
 
     //Supprime un produit depuis le serveur
-    deleteProduit(ref : string):  Observable<any>
+    deleteProduit(id : number):  Observable<any>
     {
-      return this.http.delete(API_URLS.PRODUITS_URLS + `/${ref}`);
+      return this.http.delete(API_URLS.PRODUITS_URLS + `/${id}`);
     }
 }

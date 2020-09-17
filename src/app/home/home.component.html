@@ -1,0 +1,19 @@
+<div class="row body">
+
+  <!-- SideBar -->
+  <div class="col-lg-2" *ngIf="showHideSideBar_app">
+    <app-sidebar></app-sidebar>
+  </div>
+
+  <div class="col-lg-10">
+    <!-- Menu -->
+    <app-navbar style="width: 100%;"
+      [showSideBar_navbar] = "showHideSideBar_app"
+      (showSideBarChange_navbar)="onShowSideBarChange($event)">
+    </app-navbar>
+
+    <!-- Contenu -->
+    <app-content></app-content>
+  </div>
+</div>
+

@@ -8,9 +8,9 @@ export class ProduitMockSercice{
 
   constructor()
   {
-    let p1 : Produit = new Produit("Livre", 50, 20);
-    let p2 : Produit = new Produit("Cahier", 200, 5.25);
-    let p3 : Produit = new Produit("Stylo", 500, 2.10);
+    let p1 : Produit = new Produit(1,"Livre", 50, 20);
+    let p2 : Produit = new Produit(2,"Cahier", 200, 5.25);
+    let p3 : Produit = new Produit(3,"Stylo", 500, 2.10);
 
     this.produits.push(p1);
     this.produits.push(p2);

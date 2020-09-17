@@ -21,6 +21,7 @@ export class ProduitComponent implements OnInit {
 
   selectedProduit : Produit;
 
+  
   /**
    * produitMockService c'est pour les fausses données mis dans produits.mock.services.ts
    * produitService c'est pour les vraies données de produits.services.ts et dont les données proviennent du serveur
@@ -95,7 +96,7 @@ export class ProduitComponent implements OnInit {
    //cette methode appelle deleteProduit() definie dans produit.service.ts ki a son tour appeler celle qui qui est dans le serveur
    deleteProduit()
    {
-       this.produitService.deleteProduit(this.selectedProduit.ref).subscribe(
+       this.produitService.deleteProduit(this.selectedProduit.id).subscribe(
          res => {
            //Apres avoir supprimer, on vide les champs et on return la nouvelle liste de produits
            this.selectedProduit = new Produit();
