@@ -21,6 +21,7 @@ export class AppService {
          this.http.get(API_URLS.USER_URLS).subscribe(response => {
             if(response && response["name"])
             {
+              this.cookieService.set("token", token);
               this.authenticated = true;
             }
             else

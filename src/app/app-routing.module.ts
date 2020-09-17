@@ -5,6 +5,7 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { ProduitComponent } from './produit/produit.component';
 import { ProduitResolver } from './produit/produit.resolver';
+import { UserComponent } from './user/user.component';
 
 const routes: Routes = [
   {
@@ -26,6 +27,11 @@ const routes: Routes = [
       {
         path : 'dashboard',
          component : DashboardComponent,
+         outlet:'contentOutlet'
+      },
+      {
+        path : 'user',
+         component : UserComponent,
          outlet:'contentOutlet'
       },
      ]
