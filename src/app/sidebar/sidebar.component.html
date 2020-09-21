@@ -49,21 +49,21 @@
           </li>
 
           <li>
-            <a [routerLink]="[{outlets: {contentOutlet : 'dashboard'}}]" routerLinkActive="active">
+            <a [routerLink]="[{outlets: {contentOutlet : 'dashboard'}}]" routerLinkActive="active" *ngIf="hasRoleUser()">
               <i class="fa fa-tachometer-alt"></i>
               <span>Dashboard</span>
             </a>
           </li>
 
           <li>
-            <a [routerLink]="[{outlets: {contentOutlet : 'produit'}}]" routerLinkActive="active">
+            <a [routerLink]="[{outlets: {contentOutlet : 'produit'}}]" routerLinkActive="active" *ngIf="hasRoleUser()">
               <i class="fa fa-shopping-cart"></i>
-              <span>Produit</span>
+              <span>Produits</span>
             </a>
           </li>
 
           <li>
-            <a [routerLink]="[{outlets: {contentOutlet : 'user'}}]" routerLinkActive="active">
+            <a [routerLink]="[{outlets: {contentOutlet : 'user'}}]" routerLinkActive="active" *ngIf="hasRoleAdmin()">
               <i class="fa fa-shopping-cart"></i>
               <span>Utilisateurs</span>
             </a>

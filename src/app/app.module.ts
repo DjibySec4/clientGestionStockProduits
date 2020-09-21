@@ -8,6 +8,7 @@ import { ProduitComponent } from './produit/produit.component';
 
 import {ProduitMockSercice} from './produit/produit.mock.service';
 import {ProduitService} from './produit/produit.service';
+import {UserService} from './user/user.service';
 
 import { NavbarComponent } from './navbar/navbar.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
@@ -23,6 +24,11 @@ import {XhrInterceptor} from './xhr.interceptor';
 import { CookieService } from 'ngx-cookie-service';
 import { UserComponent } from './user/user.component';
 
+import { StoreModule} from '@ngrx/store'
+
+import { principalReducer } from './shared/principal.reducer';
+
+import { CrudComponent } from './shared/crud/crud.component';
 
 @NgModule({
   declarations: [
@@ -35,12 +41,14 @@ import { UserComponent } from './user/user.component';
     LoginComponent,
     HomeComponent,
     UserComponent,
+    CrudComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
+    StoreModule.forRoot({principal : principalReducer})
   ],
   providers: [
     ProduitMockSercice,
@@ -51,7 +59,8 @@ import { UserComponent } from './user/user.component';
       useClass: XhrInterceptor,
       multi: true,
     },
-    CookieService
+    CookieService,
+    UserService
 
   ],
   bootstrap: [AppComponent]

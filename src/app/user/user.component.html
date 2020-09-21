@@ -1,1 +1,9 @@
-<p>user works!</p>
+<!-- Son contenu est dans shared/crud/crud.component.html -->
+<app-crud
+  [title]="'Utilisateurs'"
+  [data]="users"
+  [service]="userService"
+  [initItem]="user"
+  [initForm]="userForm"
+  [dataModelList]="usersModel">
+</app-crud>

@@ -1,25 +1,35 @@
-<div class="container body">
-    <form [formGroup]="loginForm" (submit)="login()">
+<h1  class="mx-auto"><u>Connnexion</u></h1>
+<div class="row container body mx-auto mt-4">
+    <div class="col-lg-5">
+      <form [formGroup]="loginForm" (submit)="login()">
+
+        <div class="container">
+          <label for="username"><b>Username</b></label>
+          <input type="text"  id="username" name="username" formControlName="username" [(ngModel)]="credentials.username" placeholder="Entrer votre username"  required>
+
+          <label for="password"><b>Password</b></label>
+          <input type="password" id="password" name="password" formControlName="password" [(ngModel)]="credentials.password" placeholder="Entrer votre mot de passe"  required>
+
+          <button type="submit">Login</button>
+          <label>
+            <input type="checkbox" checked="checked" name="remember"> Remember me
+          </label>
+        </div>
+
+        <div class="container" style="background-color:#f1f1f1">
+          <button type="button" class="cancelbtn">Cancel</button>
+          <span class="psw">Forgot <a href="#">password?</a></span>
+        </div>
+      </form>
+    </div>
+
+    <div class="col-lg-7">
       <div class="imgcontainer">
-        <img src="https://images.unsplash.com/photo-1488190211105-8b0e65b80b4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="Avatar" class="avatar">
+        <img src="https://images.pexels.com/photos/1005638/pexels-photo-1005638.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="Avatar" class="avatar img-thumbnail">
       </div>
-
-      <div class="container">
-        <label for="username"><b>Username</b></label>
-        <input type="text"  id="username" name="username" formControlName="username" [(ngModel)]="credentials.username" placeholder="Entrer votre username"  required>
-
-        <label for="password"><b>Password</b></label>
-        <input type="password" id="password" name="password" formControlName="password" [(ngModel)]="credentials.password" placeholder="Entrer votre mot de passe"  required>
-            
-        <button type="submit">Login</button>
-        <label>
-          <input type="checkbox" checked="checked" name="remember"> Remember me
-        </label>
-      </div>
-
-      <div class="container" style="background-color:#f1f1f1">
-        <button type="button" class="cancelbtn">Cancel</button>
-        <span class="psw">Forgot <a href="#">password?</a></span>
-      </div>
-    </form>
+    </div>
 </div>
+
+<!-- <div class="container body">
+
+</div> -->

@@ -3,34 +3,37 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
 import { API_URLS } from '../config/api.url.config';
-import { Produit } from '../shared/produit';
+import { Produit } from '../shared/produit.model';
 
+import { CrudService } from '../shared/crud.service';
+
+// Recupere les meth de crud depuis le serveur
 
 @Injectable()
-export class ProduitService
+export class ProduitService implements CrudService
 {
     constructor(private http : HttpClient){}
 
-    //Recupere un produit depuis le serveur
-    getProduits() : Observable<any>
+    //Recupere tous les produit depuis le serveur
+    getAll() : Observable<any>
     {
       return this.http.get(API_URLS.PRODUITS_URLS);
     }
 
     //Ajoute un produit depuis le serveur
-    addProduit(produit : Produit):  Observable<any>
+    add(produit):  Observable<any>
     {
       return this.http.post(API_URLS.PRODUITS_URLS, produit);
     }
 
     //Modifie un produit depuis le serveur
-    updateProduit(produit : Produit):  Observable<any>
+    update(produit):  Observable<any>
     {
       return this.http.put(API_URLS.PRODUITS_URLS, produit);
     }
 
     //Supprime un produit depuis le serveur
-    deleteProduit(id : number):  Observable<any>
+    delete(id):  Observable<any>
     {
       return this.http.delete(API_URLS.PRODUITS_URLS + `/${id}`);
     }
