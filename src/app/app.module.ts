@@ -30,6 +30,9 @@ import { principalReducer } from './shared/principal.reducer';
 
 import { CrudComponent } from './shared/crud/crud.component';
 
+import { ChartModule } from 'angular2-chartjs';
+import { MyChartComponent } from './my-chart/my-chart.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,13 +45,15 @@ import { CrudComponent } from './shared/crud/crud.component';
     HomeComponent,
     UserComponent,
     CrudComponent,
+    MyChartComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
-    StoreModule.forRoot({principal : principalReducer})
+    StoreModule.forRoot({principal : principalReducer}),
+    ChartModule
   ],
   providers: [
     ProduitMockSercice,

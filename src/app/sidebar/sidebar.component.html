@@ -49,7 +49,7 @@
           </li>
 
           <li>
-            <a [routerLink]="[{outlets: {contentOutlet : 'dashboard'}}]" routerLinkActive="active" *ngIf="hasRoleUser()">
+            <a [routerLink]="[{outlets: {contentOutlet : 'dashboard'}}]" routerLinkActive="active" *ngIf="hasRoleAdmin()">
               <i class="fa fa-tachometer-alt"></i>
               <span>Dashboard</span>
             </a>

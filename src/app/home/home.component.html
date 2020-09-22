@@ -5,9 +5,9 @@
     <app-sidebar></app-sidebar>
   </div>
 
-  <div class="col-lg-10">
+  <div class="col-lg-10 mx-auto">
     <!-- Menu -->
-    <app-navbar style="width: 100%;"
+    <app-navbar
       [showSideBar_navbar] = "showHideSideBar_app"
       (showSideBarChange_navbar)="onShowSideBarChange($event)">
     </app-navbar>
